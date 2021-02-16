@@ -1,0 +1,15 @@
+"D:\program files\iar_arm\arm\bin\armproc.dll" 
+
+"D:\program files\iar_arm\arm\bin\armstlink2.dll" 
+
+"K:\test_projects\stm32f767_freertos_test_iar\project\STM32746G_DISCOVERY\Exe\STM32746G_DISCOVERY.out" 
+
+--plugin="D:\program files\iar_arm\arm\bin\armbat.dll" 
+
+--device_macro="D:\program files\iar_arm\arm\config\debugger\ST\STM32F7xx.dmac" 
+
+--flash_loader="D:\program files\iar_arm\arm\config\flashloader\ST\FlashSTM32F74xxG.board" 
+
+
+
+

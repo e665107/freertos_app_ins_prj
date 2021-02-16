@@ -1,0 +1,26 @@
+* 说明
+本工程将作为以后开发的典范
+由于IAR软件经常崩溃，暂时家里电脑不再使用IAR开发
+该工程暂时停止,实验证明虚拟机中运行IAR不会卡顿
+* 使用
+1. 工程以freertos为操作系统
+2. 主要目的是用于test和template
+3. 工程还处于完善阶段
+** 使用步骤
+1. 首先要确定一个APP功能，该APP功能可能会使用app目录中不同的功能组件
+   功能组件以目录的形式呈现，当前功能组件中的实现主要是以任务的形式实现，
+   当然也可以裸机(状态机)的形式实现。
+2. 然后定义一个APP名字，并以宏的方式添加到app_config.h中eg. UART2_TEST_APP
+   要在app_init()函数中，以如下的方式确定要创建的任务eg.
+      #ifdef SPI_USART_APP
+           usart_spi_task_create(TEST4_TASK_PRIORITY, TEST2_TASK_PRIORITY);
+      #endif
+    要在bsp_init.h中确定使用哪些bsp组件eg.
+      #ifdef UART2_TEST_APP
+      #define BSP_UART2
+      #endif // UART2_TEST_APP
+3. 最后根据选择，向IAR的工程目录中添加需要的源文件，并指定头文件的路径
+4. 如果是裸机，根据具体需要确定要不要向app_init()中添加相应的app初始化函数，但是要向
+   run_the_system()中添加后台函数
+* 不同APP相关的源文件 调试好的app
+** LED_TEST_APP
